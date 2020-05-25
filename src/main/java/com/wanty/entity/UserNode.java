@@ -7,7 +7,7 @@ import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Property;
 
 @Data
-@NodeEntity(label = "User")
+@NodeEntity
 public class UserNode {
 
     @Id
@@ -17,9 +17,7 @@ public class UserNode {
     @Property(name = "userId")
     private String userId;
 
-    @Property(name = "name")
     private String name;
 
-    @Property(name = "age")
     private int age;
 }
