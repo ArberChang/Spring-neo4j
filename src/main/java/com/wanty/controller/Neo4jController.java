@@ -25,12 +25,12 @@ public class Neo4jController {
     public String addUserNode() {
         int i = 0;
         do {
-            UserNode user = new UserNode();
-            user.setAge(RandomUtils.nextInt(15, 40));
-            user.setName("Fredia" + RandomUtils.nextInt(1, 1000));
-            user.setUserId(UUID.randomUUID().toString());
-            user.setNodeId(RandomUtils.nextLong(1L, 999L));
-            neo4jService.addUser(user);
+            final UserNode build = UserNode.builder().age(RandomUtils.nextInt(15, 40))
+                    .name("Fredia" + RandomUtils.nextInt(1, 1000))
+                    .userId(UUID.randomUUID().toString())
+                    .nodeId(RandomUtils.nextLong(1L, 999L)).build();
+
+            neo4jService.addUser(build);
             i += 1;
         } while (i < 100);
 
