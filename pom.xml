@@ -23,6 +23,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-neo4j</artifactId>
         </dependency>
+        <!--
+        neo4j-ogm-embedded-driver。其主要用来提供对内嵌Driver的支持。Spring Data Neo4J主要支持两类Driver：
+        内嵌Driver以及Http Driver。内嵌Driver会直接连接本地图形数据库，因此较适合开发环境；
+        而Http Driver则会通过Http与图形数据库实例沟通，因此更加适合生产环境。
+        -->
         <dependency>
             <groupId>org.neo4j</groupId>
             <artifactId>neo4j-ogm-embedded-driver</artifactId>
